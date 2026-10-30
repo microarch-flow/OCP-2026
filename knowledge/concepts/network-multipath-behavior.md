@@ -2,7 +2,7 @@
 id: "network-multipath-behavior"
 type: "concept"
 title: "多路径传输：选择路径、控制在途量与时序互通"
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 review_status: "synthesized"
 ---
 

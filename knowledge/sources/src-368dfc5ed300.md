@@ -46,6 +46,7 @@ concepts: []
 
 ## 关联与比较
 
+- [[knowledge/concepts/power-cooling-fluid-assurance]]
 - 本条先保留来源级证据；跨源比较应检查工作负载、系统边界、实验条件和时间尺度，不能仅按标题归类后推导性能优劣。
 
 ## 不确定性与待验证

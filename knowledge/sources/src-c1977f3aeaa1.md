@@ -12,6 +12,7 @@ tags: ["ocp", "source", "platform", "open-platform-firmware-(opf)"]
 text_reviewed: true
 key_pages_visual_checked: [5, 7, 9]
 updated: "2026-10-30"
+concepts: ["[[knowledge/concepts/platform-firmware-decoupling]]"]
 ---
 
 # Flash-less 与 Streaming Boot：先解决 Early Firmware 的确定性

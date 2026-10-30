@@ -22,3 +22,6 @@ AI 基础设施反复出现同一模式：慢环设策略/边界，快环在资�
 
 ## 适用边界与证据不足
 Samsung2030为愿景；RAN为KPI replay+硬件prototype；energy storage为设计方向。三者不共同证明某套系统已达到p99、节能或TCO目标。下一步用真实模型负载/实际radio或储能器件验证，不能跨域照搬数字。
+
+## 扩展阅读
+[[knowledge/concepts/ai-infra-scale-across-bdp-and-deadlines]] 将该原则落实到远程加载/PD/BDP；[[knowledge/concepts/ai-infra-power-to-sla-contract]]覆盖电网—储能—冷却；[[knowledge/comparisons/ai-infra-quantum-integration-regimes]]区分实时decoder、共调度与跨机构服务。

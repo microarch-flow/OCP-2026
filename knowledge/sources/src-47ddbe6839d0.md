@@ -10,7 +10,7 @@ review_status: "analyzed-visual"
 evidence_pages: [2, 3, 4, 5, 6, 7, 8, 9]
 text_reviewed: true
 key_pages_visual_checked: [5, 7, 8]
-tags: ["ocp-2026", "photonics"]
+tags: ["ocp2026", "photonics"]
 concepts: ["[[knowledge/concepts/network-optics-reliability]]"]
 ---
 

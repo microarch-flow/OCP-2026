@@ -2,7 +2,7 @@
 id: "network-optics-integration-tradeoffs"
 type: "comparison"
 title: "光互连选型对照：效率、可维修性与证据成熟度"
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 review_status: "synthesized"
 ---
 

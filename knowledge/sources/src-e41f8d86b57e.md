@@ -10,7 +10,7 @@ review_status: "analyzed-visual"
 evidence_pages: [3, 4, 5, 6, 7, 8, 9, 11]
 text_reviewed: true
 key_pages_visual_checked: [6]
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 concepts: ["[[knowledge/concepts/network-buffer-workload-placement]]"]
 ---
 

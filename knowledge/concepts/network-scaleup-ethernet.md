@@ -2,7 +2,7 @@
 id: "network-scaleup-ethernet"
 type: "concept"
 title: "Scale-up Ethernet：紧凑 framing、局部重试与端点边界"
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 review_status: "synthesized"
 ---
 

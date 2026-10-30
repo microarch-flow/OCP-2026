@@ -12,6 +12,7 @@ tags: ["ocp", "source", "platform", "manageability-workshop"]
 text_reviewed: true
 key_pages_visual_checked: [8]
 updated: "2026-10-30"
+concepts: ["[[knowledge/concepts/platform-dynamic-trust-lifecycle]]"]
 ---
 
 # PLDM更新需同步参考测量与授权：把固件交付接上证明

@@ -30,3 +30,6 @@ tags: ["ai-infra", "inference-architecture"]
 
 ## 未决问题
 资料没有一套横跨上述层次的同一推理系统/同一SLA成本模型。不可据此给“某加速器更划算”的采购结论。
+
+## 性能与商业证据的补充
+[[knowledge/comparisons/ai-infra-performance-claim-evidence-matrix]]并列实测/仿真/规格/路线图的口径；[[knowledge/concepts/ai-infra-power-to-sla-contract]]把已部署设备与可承诺服务分开。

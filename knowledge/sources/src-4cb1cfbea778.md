@@ -10,7 +10,7 @@ review_status: "analyzed-visual"
 evidence_pages: [5, 6, 8, 9, 10, 11, 12, 13, 14]
 text_reviewed: true
 key_pages_visual_checked: [11, 13]
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 concepts: ["[[knowledge/concepts/network-executable-validation]]"]
 ---
 

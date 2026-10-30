@@ -12,6 +12,7 @@ tags: ["ocp", "source", "platform", "security"]
 text_reviewed: true
 key_pages_visual_checked: [12]
 updated: "2026-10-30"
+concepts: ["[[knowledge/concepts/platform-dynamic-trust-lifecycle]]"]
 ---
 
 # 无中断更新的证明：从静态测量转向不变更新策略

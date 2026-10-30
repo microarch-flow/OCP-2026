@@ -2,7 +2,7 @@
 id: "network-optical-integration"
 type: "concept"
 title: "光学集成边界：LPO、NPO、CPO、XPO 与 Open CPX"
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 review_status: "synthesized"
 ---
 
@@ -29,3 +29,6 @@ Meta对CPO/NPO的细化：CPO电路径最短、界面少、与ASIC供应链耦�
 
 ## 关联
 [[knowledge/comparisons/network-optics-integration-tradeoffs]] · [[knowledge/concepts/network-optics-reliability]]
+
+## 后续证据：慢宽接口与制造边界
+[[knowledge/comparisons/network-slow-wide-optics]]把µLED、VCSEL、NRZ/WDM与MCF按native接口、fiber和量产边界比较；[[knowledge/comparisons/network-optics-evidence-ladder]]解释800G现场与212G-lane测试为何可能给出不同选择。[[knowledge/comparisons/network-laser-fault-domain]]补充OE位置之外的laser轴。

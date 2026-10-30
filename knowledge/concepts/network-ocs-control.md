@@ -2,7 +2,7 @@
 id: "network-ocs-control"
 type: "concept"
 title: "OCS控制：光路意图、完成状态与预测误差预算"
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 review_status: "synthesized"
 ---
 

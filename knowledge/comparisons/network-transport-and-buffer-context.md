@@ -2,7 +2,7 @@
 id: "network-transport-and-buffer-context"
 type: "comparison"
 title: "看似矛盾的AI网络建议：无损、尽力而为、深缓冲与浅缓冲"
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 review_status: "synthesized"
 ---
 
@@ -31,3 +31,6 @@ review_status: "synthesized"
 
 ## 关联
 [[knowledge/concepts/network-buffer-workload-placement]] · [[knowledge/concepts/network-inference-acceptance]] · [[knowledge/concepts/network-multipath-behavior]]
+
+## 新的对照：深缓冲主张的具体仿真边界
+Arista/Broadcom采用长途2:1超售、无本地竞争流量、spraying+NSCC/RCCC；1.5×BDP阈值在其10/30/100km sweep内成立。可见10km/50MB流在该阈值虽零重传仍约8% FCT开销，不能将“few%”当所有流上界。[[knowledge/sources/src-5d08f4927b78]] [[networking/Deep Buffers- The Essential Foundation for Scalable AI Training and Inference Infrastructure.pdf#page=8|PDF p.8]][[knowledge/sources/src-5d08f4927b78]] [[networking/Deep Buffers- The Essential Foundation for Scalable AI Training and Inference Infrastructure.pdf#page=9|PDF p.9]] 与RBB常态70%利用率/GLIDE的浅缓冲策略对比，应固定arrival trace与可用带宽余量。推理跨运营域T0又叠加tenant/overlay/故障传播，不能沿用单租户专网假设。[[knowledge/sources/src-418a431c7736]] [[networking/Scaling AI Beyond the Cloud Boundary- High-Capacity Interconnects Between Hyperscalers and GPUaaS.pdf#page=6|PDF p.6]][[knowledge/sources/src-5f5b68866e25]] [[networking/Traffic Engineering in AI DCI-WAN for AI Traffic.pdf#page=9|PDF p.9]]

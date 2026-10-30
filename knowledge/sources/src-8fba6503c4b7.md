@@ -10,7 +10,7 @@ review_status: "analyzed-text"
 evidence_pages: [2, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 text_reviewed: true
 key_pages_visual_checked: []
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 concepts: ["[[knowledge/concepts/network-ocs-control]]"]
 ---
 

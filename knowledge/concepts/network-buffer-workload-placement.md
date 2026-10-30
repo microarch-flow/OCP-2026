@@ -2,7 +2,7 @@
 id: "network-buffer-workload-placement"
 type: "concept"
 title: "缓冲容量不是孤立参数：传播距离、拥塞控制与作业放置"
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 review_status: "synthesized"
 ---
 

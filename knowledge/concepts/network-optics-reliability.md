@@ -2,7 +2,7 @@
 id: "network-optics-reliability"
 type: "concept"
 title: "光互连可靠性：从平均 BER 转向中断、故障域与修复时间"
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 review_status: "synthesized"
 ---
 
@@ -28,3 +28,6 @@ review_status: "synthesized"
 
 ## 关联
 [[knowledge/comparisons/network-optics-integration-tradeoffs]] · [[knowledge/concepts/network-clock-evidence]] · [[knowledge/concepts/network-inference-acceptance]]
+
+## 扩展阅读：现场证据与故障域
+[[knowledge/comparisons/network-optics-evidence-ladder]]区分Oracle大样本800G现场、XPO212G-lane emulation与未来OCI估计；[[knowledge/comparisons/network-laser-fault-domain]]区分硬件替换、物理容量和业务影响三类blast radius，避免把低PIC FIT当整模块可用性。

@@ -12,6 +12,7 @@ tags: ["ocp", "source", "platform", "security"]
 text_reviewed: true
 key_pages_visual_checked: [21, 39, 41]
 updated: "2026-10-30"
+concepts: ["[[knowledge/concepts/platform-dynamic-trust-lifecycle]]"]
 ---
 
 # 机密存储：将TEE信任边界延伸至介质和密钥生命周期

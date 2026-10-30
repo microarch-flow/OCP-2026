@@ -12,6 +12,7 @@ tags: ["ocp", "source", "platform", "manageability-workshop"]
 text_reviewed: true
 key_pages_visual_checked: [6, 12]
 updated: "2026-10-30"
+concepts: ["[[knowledge/concepts/platform-operability-contract]]"]
 ---
 
 # PLDM诊断数据面：统一发现与传输，不统一所有载荷

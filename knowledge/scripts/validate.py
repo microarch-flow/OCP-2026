@@ -17,6 +17,7 @@ import re
 import sys
 
 from common import ANALYZED, KNOWLEDGE, REVIEW_STATES, VAULT, load_manifest, metadata, source_id, wiki_targets
+from table_wikilinks import find_unescaped_table_aliases
 
 
 def main():
@@ -132,11 +133,16 @@ def main():
         if row.get("analysis_card") and row["id"] not in cards:
             errors.append(f"manifest points to absent source card: {row['id']}")
 
-    link_count, pdf_page_count = 0, 0
+    link_count, pdf_page_count, table_alias_errors = 0, 0, 0
     for file in sorted(KNOWLEDGE.rglob("*.md")):
+        text = file.read_text(encoding="utf-8")
+        rel = file.relative_to(VAULT).as_posix()
+        for issue in find_unescaped_table_aliases(text):
+            table_alias_errors += 1
+            errors.append(f"{rel}:{issue.line}:{issue.column}: unescaped table wikilink alias pipe; run table_wikilinks.py --write on the final snapshot")
         if "templates" in file.relative_to(KNOWLEDGE).parts:
             continue
-        for target in wiki_targets(file.read_text(encoding="utf-8")):
+        for target in wiki_targets(text):
             link_count += 1
             rel = file.relative_to(VAULT).as_posix()
             path, _, fragment = target.partition("#")
@@ -175,6 +181,7 @@ def main():
         "result": "pass" if not errors else "fail", "source_commit": manifest["source_commit"],
         "sources": len(rows), "source_cards": len(cards), "wikilinks_checked": link_count,
         "pdf_page_links_checked": pdf_page_count,
+        "unescaped_table_alias_pipes": table_alias_errors,
         "raw_byte_integrity": "checked" if args.check_source_bytes else "not-run (manifest-backed source-link validation only)",
         "semantic_claim_review": "not-performed by this structural validator",
         "obsidian_ui_rendering": "not-run", "errors": errors, "warnings": warnings,

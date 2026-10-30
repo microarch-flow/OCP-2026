@@ -7,7 +7,7 @@ tags: ["ai-infra", "inference-architecture"]
 # 量子数据中心与经典基础设施：原型、容错目标和商用边界
 
 ## 已有证据范围
-当前本概念首版仅基于Xanadu光子量子材料[[knowledge/sources/src-137efda9bf69]]；不泛化到超导、中性原子或其他量子架构。更多量子资料在读取后再比较。
+首版保留Xanadu光子量子材料的关键边界；现已完成全部7份量子来源，跨模态与经典耦合比较见 [[knowledge/comparisons/ai-infra-quantum-integration-regimes]]。以下Xanadu数字仍不泛化到超导、中性原子或其他架构。
 
 ## 关键区别
 - 12 physical qubits、86billion modes的Aurora原型不是12个稳定logical qubits，也不是完整商业通用容错计算服务。[[fts-quantum-data-center-design/01_Scaling Photonic Quantum Computers.pdf#page=6|PDF p.6]]

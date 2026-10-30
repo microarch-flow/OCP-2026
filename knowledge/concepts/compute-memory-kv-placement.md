@@ -12,9 +12,9 @@ tags: [ocp2026, concept, compute-memory]
 ## 三类主要数据路径
 | 路径 | 搬什么/谁算 | 关键条件 | 来源 |
 |---|---|---|---|
-| Cached-prefix恢复 | 外部KV块回到GPU，省prefill重算 | reuse、工作集、批量传输、TTFT | [[knowledge/sources/src-7961ff4d5709|Micron]]、[[knowledge/sources/src-f667d06e3a4e|Astera]] |
-| 活动稀疏attention | indexer/TopK选择后按需gather少量KV | 小访问粒度、IOPS、串行critical path；prefetch可能很弱 | [[knowledge/sources/src-de2863526a98|Alibaba]] p.9/12 |
-| Hybrid GPU+PNM | GPU算hit pages、PNM算miss pages，回传partial attention结果后merge | PNM算力、结果缩减比、batch并行、merge数值语义 | [[knowledge/sources/src-c5ad8983371c|PNM实验]] p.28/29 |
+| Cached-prefix恢复 | 外部KV块回到GPU，省prefill重算 | reuse、工作集、批量传输、TTFT | [[knowledge/sources/src-7961ff4d5709\|Micron]]、[[knowledge/sources/src-f667d06e3a4e\|Astera]] |
+| 活动稀疏attention | indexer/TopK选择后按需gather少量KV | 小访问粒度、IOPS、串行critical path；prefetch可能很弱 | [[knowledge/sources/src-de2863526a98\|Alibaba]] p.9/12 |
+| Hybrid GPU+PNM | GPU算hit pages、PNM算miss pages，回传partial attention结果后merge | PNM算力、结果缩减比、batch并行、merge数值语义 | [[knowledge/sources/src-c5ad8983371c\|PNM实验]] p.28/29 |
 
 另一个正交维度是 **共享与管理服务**：Maru用shared pool减少跨worker副本；Marvell把hash/lookup/serde/compression等服务放到near-memory Arm。它们不自动等于“attention在内存里算”。
 

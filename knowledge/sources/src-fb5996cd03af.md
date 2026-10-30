@@ -12,6 +12,7 @@ tags: ["ocp", "source", "platform", "test-&-validation"]
 text_reviewed: true
 key_pages_visual_checked: []
 updated: "2026-10-30"
+concepts: ["[[knowledge/concepts/platform-operability-contract]]"]
 ---
 
 # CTAM：用共同测试缩小GPU固件供需验收口径差

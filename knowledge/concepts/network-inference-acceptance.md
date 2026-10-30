@@ -2,7 +2,7 @@
 id: "network-inference-acceptance"
 type: "concept"
 title: "推理网络验收：按通信图、尾延迟和可观测性采购"
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 review_status: "synthesized"
 ---
 

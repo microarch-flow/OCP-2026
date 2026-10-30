@@ -10,7 +10,7 @@ review_status: "analyzed-visual"
 evidence_pages: [4, 7, 8, 9, 10, 11, 12, 13, 15]
 text_reviewed: true
 key_pages_visual_checked: [13]
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 concepts: ["[[knowledge/concepts/network-multipath-behavior]]"]
 ---
 

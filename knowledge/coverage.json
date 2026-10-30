@@ -3,13 +3,12 @@
   "pdf_total": 501,
   "topic_total": 32,
   "zero_byte_sources": 6,
-  "analysis_cards": 104,
-  "analyzed_sources": 104,
+  "analysis_cards": 495,
+  "analyzed_sources": 495,
   "review_status_counts": {
-    "analyzed-text": 26,
-    "analyzed-visual": 78,
-    "blocked": 6,
-    "pending": 391
+    "analyzed-text": 67,
+    "analyzed-visual": 428,
+    "blocked": 6
   },
   "extraction_status_counts": {
     "blocked-empty": 6,

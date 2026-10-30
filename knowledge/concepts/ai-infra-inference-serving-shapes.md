@@ -26,3 +26,6 @@ Prefill/decode 分离不能自动提高吞吐；同 host/leaf/pod 的 locality �
 
 ## 应向供应商索取的最小证据
 完整硬件 BOM/软件版本；固定 SLA 下可持续并发与 goodput；p50/p99 TTFT、TPOT 和失败率；prefill/decode 利用率与 KV 流量；链路故障/尾部拥塞下恢复；整机与网络功率；相同租期/利用率/折旧口径的成本。这是由来源原则导出的验收建议，不是本批材料已交付的结果。
+
+## 从形态选择进入实证
+[[knowledge/comparisons/ai-infra-performance-claim-evidence-matrix]]提供同SLO比较的配置检查表；跨站点PD需另读[[knowledge/concepts/ai-infra-scale-across-bdp-and-deadlines]]。

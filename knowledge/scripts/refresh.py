@@ -11,7 +11,7 @@ from collections import Counter, defaultdict
 import json
 from pathlib import Path
 
-from common import ANALYZED, KNOWLEDGE, cards, generated, load_manifest, wikilink
+from common import ANALYZED, KNOWLEDGE, cards, generated, load_manifest, wikilink, wiki_targets
 
 
 def main():
@@ -89,10 +89,35 @@ def main():
         topic_table.append(f"| {wikilink(note, topic, True)} | {len(items)} | {complete} | {partial} | {empty} |")
         lines = [f"本主题：{len(items)} 份 PDF；已分析声明 {complete}；部分分析 {partial}；零字节 {empty}。", "", "| 原始资料 | 源卡 / 状态 |", "| --- | --- |"]
         for row in items:
-            analysis = wikilink(row["analysis_card"], row["id"] + " · " + row["review_status"], True) if row["analysis_card"] else ("阻塞：原始文件为空" if row["source_bytes"] == 0 else "待分析，不从标题推断内容")
+            analysis = wikilink(row["analysis_card"], str(found[row["id"]][1].get("title", row["title"])) + " · " + row["review_status"], True) if row["analysis_card"] else ("阻塞：原始文件为空" if row["source_bytes"] == 0 else "待分析，不从标题推断内容")
             lines.append(f"| {wikilink(row['source_path'], row['title'], True)} | {analysis} |")
         initial = "---\ntype: topic\ntitle: " + json.dumps(topic, ensure_ascii=False) + "\ntags: [\"ocp2026\", \"topic\"]\n---\n\n# " + topic + "\n\n返回 [[knowledge/index|总入口]] · [[knowledge/source-manifest|来源清单]]。\n\n## 阅读路线与主题综合\n\n这是主题导航，不是该目录全部演讲的综合结论。优先从下方已有页级证据的源卡进入；待分析条目只提供原 PDF。主题综合与跨演讲阅读路线需在实际分析后补写，不能依据标题补造。\n\n<!-- 可在此区域增加真实的主题综合，刷新脚本不会覆盖本段。 -->\n\n## 来源与分析进度"
         generated(KNOWLEDGE.parent / (note + ".md"), "topic-sources", "\n".join(lines), initial)
+        topic_file = KNOWLEDGE.parent / (note + ".md")
+        associations = Counter()
+        for row in items:
+            item_card = found.get(row["id"])
+            if item_card:
+                targets = set(wiki_targets(item_card[0].read_text(encoding="utf-8")))
+                for target in targets:
+                    if target.startswith(("knowledge/concepts/", "knowledge/comparisons/")) and (KNOWLEDGE.parent / (target + ".md")).is_file():
+                        associations[target] += 1
+        connected = ["## 关联的跨源概念与比较", "", "以下链接来自本主题源卡的实际引用，按引用它的源卡数量排序；关联不等于独立验证。", ""]
+        for target, uses in sorted(associations.items(), key=lambda pair: (-pair[1], pair[0])):
+            target_file = KNOWLEDGE.parent / (target + ".md")
+            try:
+                shown = str(metadata_for_index(target_file).get("title", target_file.stem))
+            except ValueError:
+                shown = target_file.stem
+            connected.append("- " + wikilink(target, shown) + f"（本主题 {uses} 份源卡引用）")
+        if not associations:
+            connected.append("本主题尚未形成源卡指向的跨源概念；可先阅读下方实际来源，不把目录当作共识。")
+        text = topic_file.read_text(encoding="utf-8")
+        text = text.replace("主题综合与跨演讲阅读路线需在实际分析后补写，不能依据标题补造。", "跨源概念与比较入口见下方；结论的适用条件仍需回查相应笔记。")
+        if "<!-- GENERATED:topic-concepts:BEGIN -->" not in text:
+            text = text.replace("## 来源与分析进度", "<!-- GENERATED:topic-concepts:BEGIN -->\n<!-- GENERATED:topic-concepts:END -->\n\n## 来源与分析进度", 1)
+        topic_file.write_text(text, encoding="utf-8")
+        generated(topic_file, "topic-concepts", "\n".join(connected), "")
 
     navigation = []
     for folder, title in [("concepts", "跨演讲概念"), ("comparisons", "对比分析"), ("questions", "待验证问题")]:
@@ -106,7 +131,7 @@ def main():
             body.append("- " + wikilink("knowledge/" + folder + "/" + path.stem, title_text))
         generated(KNOWLEDGE / folder / "index.md", "entries", "\n".join(body) if body else "暂无已写入条目；不把待办清单冒充跨源结论。", "# " + title + "\n\n返回 [[knowledge/index|总入口]]。")
         navigation.append("- " + wikilink("knowledge/" + folder + "/index", title) + f"：{len(notes)} 篇。")
-    index_body = summary + "\n\n## 知识入口\n\n" + "\n".join(navigation) + "\n\n## 32 个主题\n\n" + "\n".join(topic_table)
+    index_body = summary + "\n\n## 知识入口\n\n" + "\n".join(navigation) + f"\n\n## {len(topics)} 个主题\n\n" + "\n".join(topic_table)
     initial_index = "# OCP-2026 语料集 · 可追溯知识库\n\n**把整个仓库作为 Obsidian vault 打开**，然后打开本页。原始 PDF 留在原目录；所有新增分析与导航都在 `knowledge/`。没有插件或额外服务要求。\n\n## 怎么读\n\n1. 从下方主题进入已经写成的源卡；重要结论可点击原 PDF 页级证据。\n2. 查看概念与比较页理解跨演讲联系；区分原始主张、我们的归纳和未验证问题。\n3. 用 [[knowledge/source-manifest|完整来源清单]] 查未读/空文件，用 [[knowledge/coverage|覆盖率]] 看真实范围。\n4. 维护者先读 [[knowledge/AGENTS|维护约定]]；历史变更见 [[knowledge/log|编译日志]]。\n\n> 本知识库借鉴 [Karpathy 的 LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)，采用“原始资料 + 互链知识 + 维护规则”，不是单纯给每份 PDF 生成空摘要。\n\n## 当前覆盖"
     generated(KNOWLEDGE / "index.md", "navigation", index_body, initial_index)
     print(json.dumps(coverage, ensure_ascii=False, indent=2))

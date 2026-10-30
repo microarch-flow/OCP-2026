@@ -2,7 +2,7 @@
 id: "network-executable-validation"
 type: "concept"
 title: "可执行规范：把协议、平台和网络行为变成验收契约"
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 review_status: "synthesized"
 ---
 

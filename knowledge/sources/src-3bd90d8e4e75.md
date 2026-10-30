@@ -12,6 +12,7 @@ tags: ["ocp", "source", "platform", "manageability-workshop"]
 text_reviewed: true
 key_pages_visual_checked: []
 updated: "2026-10-30"
+concepts: ["[[knowledge/concepts/platform-operability-contract]]"]
 ---
 
 # Redfish别名与遥测标签：已发布Alias与WIP ServiceAlias分开看

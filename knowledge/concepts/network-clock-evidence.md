@@ -2,7 +2,7 @@
 id: "network-clock-evidence"
 type: "concept"
 title: "时间对齐的遥测证据：不确定窗口、缺失语义与安全闭环"
-tags: ["ocp-2026", "networking"]
+tags: ["ocp2026", "networking"]
 review_status: "synthesized"
 ---
 
@@ -24,3 +24,6 @@ feature vector必须继承quality/WOU/schema版本，否则聚合会把采样偏
 
 ## 关联
 [[knowledge/concepts/network-optics-reliability]] · [[knowledge/concepts/network-ocs-control]] · [[knowledge/concepts/network-inference-acceptance]]
+
+## 把时间误差分账
+[[knowledge/concepts/network-time-budget-contract]]将GNSS信任、局部同步、timestamp采集、SDK编程与预测误差分开：降低其中一个并不能保证其余满足调度窗口。
