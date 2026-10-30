@@ -1,0 +1,21 @@
+{
+  "source_commit": "d6e362b7bb1e65327b9ff005e9b55b5850ccbb34",
+  "pdf_total": 501,
+  "topic_total": 32,
+  "zero_byte_sources": 6,
+  "analysis_cards": 104,
+  "analyzed_sources": 104,
+  "review_status_counts": {
+    "analyzed-text": 26,
+    "analyzed-visual": 78,
+    "blocked": 6,
+    "pending": 391
+  },
+  "extraction_status_counts": {
+    "blocked-empty": 6,
+    "extracted": 495
+  },
+  "known_page_counts": 495,
+  "known_pages_total": 8149,
+  "note": "Analysis states are author declarations checked structurally by validate.py, not independent factual verification. Extraction never counts as analysis."
+}
