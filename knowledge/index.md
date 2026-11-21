@@ -66,3 +66,7 @@
 | [[knowledge/topics/topic-49a25f9feefa\|storage]] | 18 | 18 | 0 | 0 |
 | [[knowledge/topics/topic-7a138efee600\|systems-management]] | 15 | 15 | 0 | 0 |
 <!-- GENERATED:navigation:END -->
+
+## 官方档案补读
+
+- [[knowledge/recovered-session-synthesis|三份官方资料补读：光交换、液态金属 TIM 与 ORv3 运输]]。补读以外部官方 PDF 为证据，不计入上方原始快照覆盖率。

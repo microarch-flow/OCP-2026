@@ -14,6 +14,8 @@ tags: ["ocp2026", "topic"]
 
 <!-- 可在此区域增加真实的主题综合，刷新脚本不会覆盖本段。 -->
 
+官方档案补读：波长粒度 OCS 与每个有用 bit 的能耗，见 [[knowledge/recovered-session-synthesis|三份官方资料补读：光交换、液态金属 TIM 与 ORv3 运输]]。原始快照与下方统计不变。
+
 <!-- GENERATED:topic-concepts:BEGIN -->
 ## 关联的跨源概念与比较
 

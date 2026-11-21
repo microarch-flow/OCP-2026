@@ -24,6 +24,10 @@ tags: [ocp2026, provenance]
 - [[expo-hall-sessions/Powering AI Infrastructure- Innovations in Compute, Power, Connectivity and Cooling.pdf|Powering AI Infrastructure- Innovations in Compute, Power, Connectivity and Cooling]]
 - [[fts-ai-hpc/Wavelength-Granular OCS with Solid-State OPA- Energy-per-Bit for AI Fabrics.pdf|Wavelength-Granular OCS with Solid-State OPA- Energy-per-Bit for AI Fabrics]]
 
+### 2026-11-21 官方档案补读
+
+在主办方档案中找到了对应上面空文件的三份有效 PDF：波长粒度光交换、热界面材料和 ORv3 运输。见 [[knowledge/recovered-session-synthesis|三份官方资料补读：光交换、液态金属 TIM 与 ORv3 运输]]，含原文链接、页数、SHA-256 和页级摘要。三份原始占位文件仍是零字节；另外三场没有取到可核验 PDF。补读只记录外部来源，不改变原始快照和生成统计。
+
 ## 一组重复内容
 
 以下两个路径的非空 PDF 具有相同 Git blob SHA。清单保留两个路径身份；它们不能算作两份独立证据：
